@@ -1,0 +1,19 @@
+services:
+  application:
+    build:
+      args:
+        # Set your timezone
+        TimeZone: Asia/Tokyo
+        # Create a non-root user to use if preferred
+        USERNAME: ${USER}
+        USER_UID: 1000 # run `id -u` in your host environment, and fill the id here
+        USER_GID: 1000 # run `id -g` in your host environment, and fill the id here
+    image: 'example-ruby2-lsp:latest'
+    container_name: example-ruby2-lsp
+    volumes:
+      # If you need git config
+      - ~/.gitconfig:/home/${USER}/.gitconfig:ro
+
+volumes:
+  vscode-extensions:
+    name: example-ruby2-lsp-vscode-extensions

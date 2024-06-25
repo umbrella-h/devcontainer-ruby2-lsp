@@ -12,7 +12,6 @@ services:
       - ..:/usr/workspace
       - vscode-extensions:/home/${USER}/.vscode-server/extensions
       - vscode-extensions:/home/${USER}/.vscode-server-insiders/extensions
-      # - ~/.gitconfig:/home/${USER}/.gitconfig:ro
     command: sleep infinity
 
 volumes:

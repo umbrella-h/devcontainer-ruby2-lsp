@@ -1,0 +1,8 @@
+services:
+  application:
+    image: simple-ruby2-lsp:latest
+    container_name: simple-ruby2-lsp
+
+volumes:
+  vscode-extensions:
+    name: simple-ruby2-lsp-vscode-extensions
