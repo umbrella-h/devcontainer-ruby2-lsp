@@ -2,8 +2,10 @@
 
 By default, the VS Code extension for [Ruby LSP requires Ruby 3.0 or newer to run.](https://github.com/Shopify/ruby-lsp/issues/1688#issuecomment-2004580232)
 
-This is a VS Code Devcontainer settings example for applying Ruby LSP to a project in Ruby < 3.0. It can also be useful when there is a need to run Ruby LSP in a Ruby version different from the project's.
-(Currently, it is tested in one of my Ruby 2.7.0 projects.)
+This is a VS Code Devcontainer settings example for:
+- Applying Ruby LSP to a project in Ruby < 3.0.
+- Running Ruby LSP in a Ruby version different from the project's.
+> Currently, it is tested in one of my Ruby 2.7.0 projects.
 
 This repository is originally designed for my colleagues, who prefer not to handle the Ruby environment directly and appreciate the convenience of Devcontainers.
 
@@ -42,6 +44,12 @@ For those comfortable handling the Ruby environment and not inclined to learn ab
        git add .devcontainer
        git commit -m "Update devcontainer submodule"
        ```
-1. Follow the steps outlined in [this VS Code official tutorial](https://code.visualstudio.com/docs/devcontainers/tutorial).
+1. Create a `.devcontainer/docker-compose.override.yml` file:
+   > Refer to the `docker-compose.override.*example.yml` files.
+
+   > It is recommended to customize the names of the image, container, and volume to make it easier to discriminate between projects. [See the simple example](./docker-compose.override.simple-example.yml).
+
+
+1. Follow the steps in [this VS Code official tutorial](https://code.visualstudio.com/docs/devcontainers/tutorial).
 1. Ruby LSP should automatically start, and an indexing progress bar will appear at the bottom of your VS Code window.
    > If not, try restarting Ruby LSP using the command `Ruby LSP: Restart` in the VS Code Command Palette (`Ctrl/Command + Shift + P`).
